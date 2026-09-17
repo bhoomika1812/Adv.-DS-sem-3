@@ -58,7 +58,7 @@ string infixToPrefix(string s) {
         // Operator
         else {
             while (!st.empty() &&
-                   precedence(st.top()) > precedence(ch)) {
+                   precedence(st.top()) >= precedence(ch)) {
                 ans += st.top();
                 st.pop();
             }

@@ -7,4 +7,32 @@ again*/
 #include <bits/stdc++.h>
 using namespace std;
 
-string S, R;
+int main () {
+    string s = "llohe";
+    string r = "hello";
+    int t = 3;
+    int arr[] = { 2, -1, -1};
+    int n = s.length();
+    for (int i = 0; i < t; i++) {
+        int k = arr[i];
+
+        if (n == 0) {
+            cout << "empty";
+        }
+        if (k > 0) {
+            k = k % n;
+            s = s.substr(n - k) + s.substr(0, n - k);
+        }
+        else if (k < 0) {
+            k = (-k) % n;
+            s = s.substr(k) + s.substr (0, k);
+        }
+    }
+    if (s == r) {
+        cout << "password accepted" << endl;
+    }
+    else {
+        cout << "try again" << endl;
+    }
+    return 0;
+}
